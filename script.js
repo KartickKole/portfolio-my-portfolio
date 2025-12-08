@@ -5,25 +5,25 @@ document.addEventListener("DOMContentLoaded", () => {
     const navToggle = document.getElementById("nav-toggle");
     const navLinks = document.getElementById("nav-links");
 
-    // Footer year
+    /* Footer year */
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
 
-    // Apply saved theme
+    /* Saved theme */
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "light") {
         body.classList.add("light");
     }
 
-    // Theme icon update
+    /* Theme icon */
     function updateIcon() {
         if (!toggleBtn) return;
         toggleBtn.textContent = body.classList.contains("light") ? "☀️" : "🌙";
     }
     updateIcon();
 
-    // Theme toggle click
+    /* Theme toggle click */
     if (toggleBtn) {
         toggleBtn.addEventListener("click", () => {
             body.classList.toggle("light");
@@ -33,13 +33,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // =========================
-    // Mobile nav toggle
-    // =========================
+    /* =========================
+       Mobile nav toggle
+       ========================= */
     if (navToggle && navLinks) {
         navToggle.addEventListener("click", () => {
             navLinks.classList.toggle("open");
-            // icon change
+
+            // Change icon (bars <-> X)
             const icon = navToggle.querySelector("i");
             if (icon) {
                 icon.classList.toggle("fa-bars");
@@ -47,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        // Close menu when any link clicked (mobile)
+        // Close menu when clicking link on mobile
         navLinks.querySelectorAll("a").forEach((link) => {
             link.addEventListener("click", () => {
                 if (navLinks.classList.contains("open")) {
@@ -62,14 +63,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // =========================
-    // Contact form + EmailJS
-    // =========================
+    /* =========================
+       Contact form + EmailJS
+       ========================= */
     const contactForm = document.getElementById("contact-form");
     const formNote = document.querySelector(".form-note");
 
     if (contactForm) {
-        contactForm.addEventListener("submit", function (e) {
+        contactForm.addEventListener("submit", (e) => {
             e.preventDefault();
 
             if (formNote) {
