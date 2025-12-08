@@ -29,8 +29,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
       (function () {
-        // public key
-        emailjs.init("2VCaNpB_7kyfsRo5k");
+        emailjs.init("2VCaNpB_7kyfsRo5k"); // public key
       })();
     </script>
   </head>
@@ -40,14 +39,25 @@
       <div class="container nav-content">
         <div class="logo">KK<span>.</span></div>
 
-        <!-- Theme toggle button -->
-        <button
-          class="theme-toggle"
-          id="theme-toggle"
-          aria-label="Toggle theme"
-        ></button>
+        <div class="nav-right">
+          <!-- Theme toggle button -->
+          <button
+            class="theme-toggle"
+            id="theme-toggle"
+            aria-label="Toggle theme"
+          ></button>
 
-        <nav class="nav-links">
+          <!-- Mobile menu toggle -->
+          <button
+            class="nav-toggle"
+            id="nav-toggle"
+            aria-label="Toggle navigation"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+
+        <nav class="nav-links" id="nav-links">
           <a href="#home">Home</a>
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
@@ -64,7 +74,9 @@
           <p class="tag">Hello, I’m</p>
           <h1>Kartick Koley</h1>
           <h2>
-            MCA Student | Angular Developer Intern | Web & Mobile App Developer
+            MCA Student | Angular Developer Intern | React &amp; React Native
+            Developer | Node.js &amp; Express | MongoDB &amp; MySQL | Web &amp;
+            Mobile App Developer
           </h2>
           <p class="hero-desc">
             I’m an MCA student and Angular Developer Intern with hands-on
@@ -117,7 +129,7 @@
             <p><span>Course:</span> MCA (2nd Year)</p>
             <p><span>Location:</span> Bankura, India</p>
             <p>
-              <span>Interests:</span> Building Web & Mobile Applications,
+              <span>Interests:</span> Building Web &amp; Mobile Applications,
               Learning New Technologies
             </p>
           </div>
@@ -129,7 +141,7 @@
     <section id="skills" class="section alt">
       <div class="container">
         <h2 class="section-title">Skills</h2>
-        <p class="section-subtitle">Technologies & tools I work with</p>
+        <p class="section-subtitle">Technologies &amp; tools I work with</p>
 
         <div class="chip-list">
           <span class="chip"><i class="fa-brands fa-angular"></i>Angular</span>
@@ -137,6 +149,7 @@
             ><i class="fa-brands fa-react"></i>React Native</span
           >
           <span class="chip"><i class="fa-brands fa-js"></i>JavaScript</span>
+          <span class="chip"><i class="fa-brands fa-react"></i>React</span>
           <span class="chip"><i class="fa-brands fa-node-js"></i>Node.js</span>
           <span class="chip"><i class="fa-solid fa-database"></i>MongoDB</span>
           <span class="chip"><i class="fa-solid fa-database"></i>MySQL</span>
@@ -183,7 +196,7 @@
               A responsive portfolio website to showcase my projects, skills,
               and contact details.
             </p>
-            <p class="project-tags">HTML • CSS</p>
+            <p class="project-tags">HTML • CSS • JavaScript</p>
             <a href="#" class="project-link">Live Demo</a>
           </div>
         </div>
@@ -246,11 +259,11 @@
               <span class="contact-text">
                 <span class="contact-label">LinkedIn</span>
                 <a
-                  href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_google-one-tap-submit"
+                  href="https://www.linkedin.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  linkedin.com/in/KartickKoley
+                  linkedin.com/in/your-profile
                 </a>
               </span>
             </p>
@@ -289,7 +302,7 @@
     <footer class="footer">
       <div class="container footer-content">
         <p>© <span id="year"></span> Kartick Koley. All rights reserved.</p>
-        <p>Built with ❤ using HTML &amp; CSS.</p>
+        <p>Built with ❤ using HTML, CSS &amp; JavaScript.</p>
       </div>
     </footer>
 
