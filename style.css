@@ -106,9 +106,9 @@ body {
 }
 
 .nav-content {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: space-between;
   padding: 0.75rem 0;
   gap: 0.75rem;
 }
@@ -121,6 +121,13 @@ body {
 
 .logo span {
   color: var(--accent);
+}
+
+.nav-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.4rem;
 }
 
 /* Theme toggle button */
@@ -143,10 +150,12 @@ body {
   transform: translateY(-1px);
 }
 
+/* Nav links */
 .nav-links {
   display: flex;
   gap: 1.2rem;
   font-size: 0.9rem;
+  justify-content: flex-end;
 }
 
 .nav-links a {
@@ -176,6 +185,19 @@ body {
   width: 100%;
 }
 
+/* Mobile nav button */
+.nav-toggle {
+  display: none;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background: var(--surface);
+  border-radius: 999px;
+  padding: 0.3rem 0.55rem;
+  cursor: pointer;
+  font-size: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Hero */
 .hero {
   padding: 4.5rem 0 3rem;
@@ -203,7 +225,7 @@ body {
 }
 
 .hero h2 {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--muted);
   margin-bottom: 0.9rem;
 }
@@ -218,6 +240,7 @@ body {
   margin-top: 1.4rem;
   display: flex;
   gap: 0.9rem;
+  flex-wrap: wrap;
 }
 
 /* Buttons */
@@ -546,7 +569,7 @@ body.light .project-tags {
   color: var(--muted);
 }
 
-/* Responsive */
+/* ========== Responsive ========== */
 @media (max-width: 900px) {
   .hero-content,
   .about-grid,
@@ -563,6 +586,18 @@ body.light .project-tags {
     margin-bottom: 1.4rem;
   }
 
+  .hero-text {
+    text-align: center;
+  }
+
+  .hero-desc {
+    margin: 0 auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
   .footer-content {
     flex-direction: column;
     gap: 0.3rem;
@@ -571,16 +606,41 @@ body.light .project-tags {
 }
 
 @media (max-width: 640px) {
+  .nav-content {
+    grid-template-columns: auto 1fr auto;
+  }
+
   .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 4%;
+    margin-top: 0.4rem;
+    background: var(--surface-soft);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-soft);
+    padding: 0.7rem 1rem;
+    flex-direction: column;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    min-width: 180px;
     display: none;
   }
 
-  .theme-toggle {
-    margin-left: auto;
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
   }
 
   .hero h1 {
-    font-size: 2rem;
+    font-size: 2.1rem;
+  }
+
+  .hero h2 {
+    font-size: 0.95rem;
   }
 
   .section {
