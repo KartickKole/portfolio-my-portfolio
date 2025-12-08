@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const body = document.body;
     const toggleBtn = document.getElementById("theme-toggle");
     const yearSpan = document.getElementById("year");
+    const navToggle = document.getElementById("nav-toggle");
+    const navLinks = document.getElementById("nav-links");
 
     // Footer year
     if (yearSpan) {
@@ -28,6 +30,35 @@ document.addEventListener("DOMContentLoaded", () => {
             const isLight = body.classList.contains("light");
             localStorage.setItem("theme", isLight ? "light" : "dark");
             updateIcon();
+        });
+    }
+
+    // =========================
+    // Mobile nav toggle
+    // =========================
+    if (navToggle && navLinks) {
+        navToggle.addEventListener("click", () => {
+            navLinks.classList.toggle("open");
+            // icon change
+            const icon = navToggle.querySelector("i");
+            if (icon) {
+                icon.classList.toggle("fa-bars");
+                icon.classList.toggle("fa-xmark");
+            }
+        });
+
+        // Close menu when any link clicked (mobile)
+        navLinks.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+                if (navLinks.classList.contains("open")) {
+                    navLinks.classList.remove("open");
+                    const icon = navToggle.querySelector("i");
+                    if (icon) {
+                        icon.classList.add("fa-bars");
+                        icon.classList.remove("fa-xmark");
+                    }
+                }
+            });
         });
     }
 
